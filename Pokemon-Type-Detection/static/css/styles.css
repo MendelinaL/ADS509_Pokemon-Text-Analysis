@@ -1,0 +1,63 @@
+body{
+	font:18px/1.5 Trebuchet MS, Helvetica,Arial;
+	padding: 0px;
+	background-image: url('background.png');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.container{
+	width:100%;
+	margin: auto;
+	overflow: hidden;
+}
+
+header{
+	background:#e4f4f9;#e4f4f9;
+	border-bottom:#e4f4f9 3px solid;
+	height:120px;
+	width:100%;
+	text-align:left;
+	padding-top:30px;
+
+}
+
+.main-header{
+		font: 18px Trebuchet MS;			
+		text-align:left;
+		background-color: #12518e;
+		height:100px;
+		width:100%;
+		margin:0px;
+}
+#brandname{
+	float:left;
+	font: 18px Trebuchet MS;
+	font-size:30px;
+	color: #12518e;
+	margin: 10px;
+}
+
+header h2{
+	text-align: left;
+	color:#12518e;
+
+}
+
+
+
+.btn-info {background-color: #ece0e1;
+	font: 16px Helvetica;
+	height:40px;
+	width:100px;} /* Blue */
+.btn-info:hover {background: #ece0e1;}
+
+
+.resultss{
+	border-radius: 15px 50px;
+    background: #345fe4;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;
+}
