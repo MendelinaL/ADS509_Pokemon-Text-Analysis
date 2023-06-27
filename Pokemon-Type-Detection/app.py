@@ -3,14 +3,13 @@ from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import classification_report
-from flask import Flask,render_template,url_for,request
+from flask import Flask,render_template,url_for,request, redirect, render_template
 import pandas as pd 
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 import joblib
-
-
+from io import StringIO
 
 
 app = Flask(__name__)
@@ -18,6 +17,19 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('home.html')
+
+
+@app.route('/stats', methods = ['POST', 'GET'])
+def stats():
+    if request.method == 'POST':
+        Final_Data = pd.read_csv('Final_Data.csv', index_col = [0])
+        pokemon = request.form.get('comment')
+        print(pokemon)
+        pokemon = str(pokemon)
+        pokemon_output = Final_Data.loc[Final_Data['pokemon'] == pokemon]
+        return render_template('result.html',tables=[pokemon_output.to_html()],titles = pokemon)
+    return 
+    
 
 @app.route('/predict',methods=['POST'])
 def predict():

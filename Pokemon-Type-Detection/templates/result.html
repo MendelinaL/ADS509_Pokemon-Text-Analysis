@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+	<title>Results</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
 </head>
+
 <body>
 
 	<header>
 		<div class="container">
 		<div id="brandname">
-			ML App
+		Text Classification App by Katie Hu, Mendelina Lopez, and Michael Nguyen
 		</div>
-		<h2>Spam Detector For SMS Messages</h2>
-		
+
+
 	</div>
+
 	</header>
-	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Comment</b></p>
-	<div class="results">
 
-
-		
-	{% if prediction == 1%}
-	<h2 style="color:red;">Spam</h2>
-	{% elif prediction == 0%}
-	<h2 style="color:blue;">Not a Spam (It is a Ham)</h2>
-	{% endif %}
-
+	<div class = "ml-container">
+  	{% for table in tables %}
+	<h2>Pokemon Selected: {{titles}}</h2>
+    	{{ table|safe }}
+  	{% endfor %}
+	
 	</div>
 
 </body>

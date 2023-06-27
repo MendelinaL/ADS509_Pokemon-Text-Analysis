@@ -4,34 +4,58 @@
 	<title>Home</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+
 </head>
 <body>
 
 	<header>
 		<div class="container">
 		<div id="brandname">
-			Text Classification App by Katie Hu, Mendelina Lopez, and Michael Nguyen
+		Text Classification App by Katie Hu, Mendelina Lopez, and Michael Nguyen
 		</div>
-		<h2>Pokedex</h2>
+		<h2>Pokédex</h2>
+
+	</div>
+
+	</header>
+
+	<div class="ml-container">
+		<br/>
+		<p> <b> Enter Your Pokemon for the Pokédex </b> </p>
+		<form action="/stats" method="post">
+  		<!-- <input type="text" name="comment"></input> -->
+		<textarea name="comment" rows="4" cols="50"></textarea>
+		<br/>
+  		<input type="submit" value="find out more about me!"></input>
+		</form>
+
+		
 		
 	</div>
+
+	<p style="text-align: center;">{{ output }}</p>
+		
+	</div>
+
+
 	</header>
 
 	<div class="ml-container">
 
 		<form action="{{ url_for('predict')}}" method="POST">
-		<p>Enter Your Pokemon Here</p>
+		<p> <b> Find your Pokemon Type </b> </p>
 		<!-- <input type="text" name="comment"/> -->
 		<textarea name="message" rows="4" cols="50"></textarea>
 		<br/>
-
-		<input type="submit" class="btn-info" value="predict">
+ 		<input type="submit" value="predict"></input>
 		
 	</form>
 		
 	</div>
 
-	
+	<p style="text-align: center;">{{ output }}</p>
 	
 
 </body>
