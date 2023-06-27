@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+		Text Classification App by Katie Hu, Mendelina Lopez, and Michael Nguyen
+		</div>
+
+
+	</div>
+
+	</header>
+
+	<div class = "ml-container">
+  	{% for table in tables %}
+	<h2>Pokemon Selected: {{titles}}</h2>
+    	{{ table|safe }}
+  	{% endfor %}
+	
+	</div>
+
+	</header>
+
+	<div class = "ml-container">
+	{{prediction}}
+
+	
+	</div>
+
+</body>
+</html>
